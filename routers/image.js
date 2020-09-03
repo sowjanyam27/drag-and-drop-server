@@ -10,14 +10,13 @@ router.post("/", async (request, response, next) => {
   const { title, description, place, category, tags, imageId } = request.body;
   try {
     const imageToUpdate = await Image.findByPk(imageId);
-    console.log("-----imagetofind:", imageToUpdate);
     if (!imageToUpdate) {
       res.status(404).send("Image not found");
     } else {
       const updatedImage = await imageToUpdate.update({
         title,
         description,
-        location: place,
+        location: place.address,
         categoryId: category,
       });
 
