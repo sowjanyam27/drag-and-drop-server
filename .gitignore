@@ -2,4 +2,5 @@ node_modules/
 seeders/20200831103810-some-tags.js
 seeders/20200831104315-some-images.js
 seeders/20200831104716-some-imagestags.js
-
+.env
+public/
